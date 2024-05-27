@@ -15,6 +15,11 @@
 		5504D2A42C048912007225AB /* InstalmentsDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2A32C048912007225AB /* InstalmentsDataTests.swift */; };
 		5504D2A62C0489DA007225AB /* ProductAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2A52C0489DA007225AB /* ProductAttributeTests.swift */; };
 		5504D2A82C048A8E007225AB /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2A72C048A8E007225AB /* ProductTests.swift */; };
+		5504D2AB2C048E03007225AB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2AA2C048E03007225AB /* HTTPMethod.swift */; };
+		5504D2AD2C048EA0007225AB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2AC2C048EA0007225AB /* NetworkError.swift */; };
+		5504D2AF2C048EE0007225AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2AE2C048EE0007225AB /* NetworkManager.swift */; };
+		5504D2B22C04914A007225AB /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2B12C04914A007225AB /* EncodableExtensions.swift */; };
+		5504D2B52C04917B007225AB /* EncodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2B42C04917B007225AB /* EncodableError.swift */; };
 		554F6FFA2C046FFD005F4803 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F6FF92C046FFD005F4803 /* ProductDetailView.swift */; };
 		55CAD9092C0449520058E54A /* MeLi_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */; };
 		55CAD90B2C0449520058E54A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD90A2C0449520058E54A /* ContentView.swift */; };
@@ -45,6 +50,11 @@
 		5504D2A32C048912007225AB /* InstalmentsDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalmentsDataTests.swift; sourceTree = "<group>"; };
 		5504D2A52C0489DA007225AB /* ProductAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAttributeTests.swift; sourceTree = "<group>"; };
 		5504D2A72C048A8E007225AB /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
+		5504D2AA2C048E03007225AB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5504D2AC2C048EA0007225AB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5504D2AE2C048EE0007225AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5504D2B12C04914A007225AB /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
+		5504D2B42C04917B007225AB /* EncodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableError.swift; sourceTree = "<group>"; };
 		554F6FF92C046FFD005F4803 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		55CAD9052C0449520058E54A /* MeLi Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeLi Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLi_ChallengeApp.swift; sourceTree = "<group>"; };
@@ -112,6 +122,41 @@
 			path = ModelsTests;
 			sourceTree = "<group>";
 		};
+		5504D2A92C048DF7007225AB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5504D2B72C04936A007225AB /* API */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5504D2B02C04913D007225AB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5504D2B32C04915D007225AB /* Encodable */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5504D2B32C04915D007225AB /* Encodable */ = {
+			isa = PBXGroup;
+			children = (
+				5504D2B12C04914A007225AB /* EncodableExtensions.swift */,
+				5504D2B42C04917B007225AB /* EncodableError.swift */,
+			);
+			path = Encodable;
+			sourceTree = "<group>";
+		};
+		5504D2B72C04936A007225AB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5504D2AE2C048EE0007225AB /* NetworkManager.swift */,
+				5504D2AA2C048E03007225AB /* HTTPMethod.swift */,
+				5504D2AC2C048EA0007225AB /* NetworkError.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		55CAD8FC2C0449520058E54A = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +178,8 @@
 		55CAD9072C0449520058E54A /* MeLi Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				5504D2B02C04913D007225AB /* Utilities */,
+				5504D2A92C048DF7007225AB /* Networking */,
 				55CAD90C2C0449540058E54A /* Assets.xcassets */,
 				55CAD90A2C0449520058E54A /* ContentView.swift */,
 				55CAD90E2C0449540058E54A /* MeLi_Challenge.entitlements */,
@@ -285,7 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5504D2AF2C048EE0007225AB /* NetworkManager.swift in Sources */,
+				5504D2AB2C048E03007225AB /* HTTPMethod.swift in Sources */,
+				5504D2B22C04914A007225AB /* EncodableExtensions.swift in Sources */,
 				55F328992C04515F0037D987 /* HomeView.swift in Sources */,
+				5504D2B52C04917B007225AB /* EncodableError.swift in Sources */,
 				5504D2512C0483CF007225AB /* InstallmentsData.swift in Sources */,
 				554F6FFA2C046FFD005F4803 /* ProductDetailView.swift in Sources */,
 				55CAD90B2C0449520058E54A /* ContentView.swift in Sources */,
@@ -293,6 +344,7 @@
 				5504D2532C04845E007225AB /* ShippingData.swift in Sources */,
 				5504D24D2C0481C6007225AB /* ProductAttribute.swift in Sources */,
 				55CAD9092C0449520058E54A /* MeLi_ChallengeApp.swift in Sources */,
+				5504D2AD2C048EA0007225AB /* NetworkError.swift in Sources */,
 				5504D2492C04811B007225AB /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
