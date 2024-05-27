@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5504D2492C04811B007225AB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2482C04811B007225AB /* Product.swift */; };
+		5504D24D2C0481C6007225AB /* ProductAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D24C2C0481C6007225AB /* ProductAttribute.swift */; };
+		5504D2512C0483CF007225AB /* InstallmentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2502C0483CF007225AB /* InstallmentsData.swift */; };
+		5504D2532C04845E007225AB /* ShippingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2522C04845E007225AB /* ShippingData.swift */; };
 		554F6FFA2C046FFD005F4803 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F6FF92C046FFD005F4803 /* ProductDetailView.swift */; };
 		55CAD9092C0449520058E54A /* MeLi_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */; };
 		55CAD90B2C0449520058E54A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD90A2C0449520058E54A /* ContentView.swift */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5504D2482C04811B007225AB /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		5504D24C2C0481C6007225AB /* ProductAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAttribute.swift; sourceTree = "<group>"; };
+		5504D2502C0483CF007225AB /* InstallmentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsData.swift; sourceTree = "<group>"; };
+		5504D2522C04845E007225AB /* ShippingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingData.swift; sourceTree = "<group>"; };
 		554F6FF92C046FFD005F4803 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		55CAD9052C0449520058E54A /* MeLi Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeLi Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLi_ChallengeApp.swift; sourceTree = "<group>"; };
@@ -41,6 +49,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5504D2472C0480F9007225AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5504D2482C04811B007225AB /* Product.swift */,
+				5504D24C2C0481C6007225AB /* ProductAttribute.swift */,
+				5504D2502C0483CF007225AB /* InstallmentsData.swift */,
+				5504D2522C04845E007225AB /* ShippingData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		55CAD8FC2C0449520058E54A = {
 			isa = PBXGroup;
 			children = (
@@ -60,13 +79,14 @@
 		55CAD9072C0449520058E54A /* MeLi Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				55CAD90C2C0449540058E54A /* Assets.xcassets */,
+				55CAD90A2C0449520058E54A /* ContentView.swift */,
+				55CAD90E2C0449540058E54A /* MeLi_Challenge.entitlements */,
+				55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */,
+				5504D2472C0480F9007225AB /* Models */,
+				55CAD90F2C0449540058E54A /* Preview Content */,
 				55EFD99E2C046C060000F42E /* Resources */,
 				55F328972C04513F0037D987 /* Views */,
-				55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */,
-				55CAD90A2C0449520058E54A /* ContentView.swift */,
-				55CAD90C2C0449540058E54A /* Assets.xcassets */,
-				55CAD90E2C0449540058E54A /* MeLi_Challenge.entitlements */,
-				55CAD90F2C0449540058E54A /* Preview Content */,
 			);
 			path = "MeLi Challenge";
 			sourceTree = "<group>";
@@ -170,10 +190,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				55F328992C04515F0037D987 /* HomeView.swift in Sources */,
+				5504D2512C0483CF007225AB /* InstallmentsData.swift in Sources */,
 				554F6FFA2C046FFD005F4803 /* ProductDetailView.swift in Sources */,
 				55CAD90B2C0449520058E54A /* ContentView.swift in Sources */,
 				55F3289B2C0454A30037D987 /* ProductCardView.swift in Sources */,
+				5504D2532C04845E007225AB /* ShippingData.swift in Sources */,
+				5504D24D2C0481C6007225AB /* ProductAttribute.swift in Sources */,
 				55CAD9092C0449520058E54A /* MeLi_ChallengeApp.swift in Sources */,
+				5504D2492C04811B007225AB /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
