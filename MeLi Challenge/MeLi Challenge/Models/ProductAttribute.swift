@@ -6,7 +6,7 @@
 //
 
 public struct ProductAttribute: Identifiable, Hashable {
-    public let id: String // Unique id, use value_id
+    public let id: String
     public let name: String
     public let group: String
     public let values: [String]
