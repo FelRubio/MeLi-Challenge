@@ -1,0 +1,56 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "HOME_NAV_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hogar"
+          }
+        }
+      }
+    },
+    "PRICE_PLACEHOLDER" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " $ 999.999"
+          }
+        }
+      }
+    },
+    "Product details:" : {
+
+    },
+    "PRODUCT_DETAIL_NAV_TITLE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Product details"
+          }
+        }
+      }
+    },
+    "PRODUCT_NAME_PLACEHOLDER" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu velit eros. Vestibulum vel erat lectus. Aliquam faucibus ipsum sed nunc venenatis condimentum."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
