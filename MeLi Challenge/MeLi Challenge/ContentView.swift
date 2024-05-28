@@ -11,6 +11,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             HomeView()
+                .task {
+                    let repo = ProductRepository()
+                    try? await repo.fetchProductsBy("iphone")
+                }
         }
     }
 }
