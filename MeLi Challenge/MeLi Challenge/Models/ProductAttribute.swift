@@ -11,21 +11,17 @@ public struct ProductAttribute: Identifiable, Hashable {
     public let id: String
     /// The name of the attribute.
     public let name: String
-    /// The group to which the attribute belongs.
-    public let group: String
-    /// The values of the attribute.
-    public let values: [String]
+    /// The value of the attribute.
+    public let value: String
 
     /// Initializes a new instance of `ProductAttribute`.
     /// - Parameters:
     ///   - id: The unique identifier of the attribute.
     ///   - name: The name of the attribute.
-    ///   - group: The group to which the attribute belongs.
-    ///   - values: The values of the attribute.
-    public init(id: String, name: String, group: String, values: [String]) {
+    ///   - value: The value of the attribute.
+    public init(id: String, name: String, value: String) {
         self.id = id
         self.name = name
-        self.group = group
-        self.values = values
+        self.value = value
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Felipe on 27/05/24.
 //
 
+import Foundation
+
 /// Represents a product with its details.
 public struct Product: Identifiable, Hashable {
     /// The unique identifier of the product.
@@ -29,6 +31,10 @@ public struct Product: Identifiable, Hashable {
     public let shippingData: ShippingData
     /// The installment payment data of the product.
     public let installmentsData: InstallmentsData
+    /// The description of the product.
+    public let description: String
+    /// The images URL of the product to be displayed.
+    public let images: [URL]
 
     /// Initializes a new instance of `Product`.
     /// - Parameters:
@@ -43,6 +49,8 @@ public struct Product: Identifiable, Hashable {
     ///   - quantityAvailable: The quantity of the product available.
     ///   - shippingData: The shipping data of the product.
     ///   - installmentsData: The installment payment data of the product.
+    ///   - description: The description of the product.
+    ///   - images: The array of images URL of the product to be displayed.
     public init(
         id: String,
         title: String,
@@ -54,7 +62,9 @@ public struct Product: Identifiable, Hashable {
         seller: String,
         quantityAvailable: Int,
         shippingData: ShippingData,
-        installmentsData: InstallmentsData
+        installmentsData: InstallmentsData,
+        description: String,
+        images: [URL]
     ) {
         self.id = id
         self.title = title
@@ -67,5 +77,7 @@ public struct Product: Identifiable, Hashable {
         self.quantityAvailable = quantityAvailable
         self.shippingData = shippingData
         self.installmentsData = installmentsData
+        self.description = description
+        self.images = images
     }
 }

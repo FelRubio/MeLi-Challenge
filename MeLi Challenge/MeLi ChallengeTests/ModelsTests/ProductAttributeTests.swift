@@ -9,30 +9,27 @@ import XCTest
 @testable import MeLi_Challenge
 
 final class ProductAttributeTests: XCTestCase {
-    func testProductAttributeInitializationWithValidValues() {
-        let attribute = ProductAttribute(id: "color", name: "Color", group: "General", values: ["Red", "Blue"])
+    func testProductAttributeInitializationWithValidValue() {
+        let attribute = ProductAttribute(id: "color", name: "Color", value: "Red")
         
         XCTAssertEqual(attribute.id, "color")
         XCTAssertEqual(attribute.name, "Color")
-        XCTAssertEqual(attribute.group, "General")
-        XCTAssertEqual(attribute.values, ["Red", "Blue"])
+        XCTAssertEqual(attribute.value, "Red")
     }
     
     func testProductAttributeInitializationWithEmptyValuesArray() {
-        let attribute = ProductAttribute(id: "color", name: "Color", group: "General", values: [])
+        let attribute = ProductAttribute(id: "color", name: "Color", value: "")
         
         XCTAssertEqual(attribute.id, "color")
         XCTAssertEqual(attribute.name, "Color")
-        XCTAssertEqual(attribute.group, "General")
-        XCTAssertEqual(attribute.values, [])
+        XCTAssertEqual(attribute.value, "")
     }
     
     func testProductAttributeInitializationWithEmptyStrings() {
-        let attribute = ProductAttribute(id: "", name: "", group: "", values: ["Value1"])
+        let attribute = ProductAttribute(id: "", name: "", value: "")
         
         XCTAssertEqual(attribute.id, "")
         XCTAssertEqual(attribute.name, "")
-        XCTAssertEqual(attribute.group, "")
-        XCTAssertEqual(attribute.values, ["Value1"])
+        XCTAssertEqual(attribute.value, "")
     }
 }
