@@ -36,4 +36,27 @@ public struct MockUpProductRepository: ProductRepositoryProtocol {
     public func getProductDescription(with id: String) async throws -> String {
         ""
     }
+    
+    public func fetchPromotions() async throws -> [Product] {
+        [
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample(),
+            .randomSample()
+        ]
+    }
 }
