@@ -26,5 +26,5 @@ public protocol ProductRepositoryProtocol {
     /// - Parameter id: The unique identifier of the product description.
     /// - Returns: The description of the product as a `String`.
     /// - Throws: An error if the fetch fails.
-    func getProductDescription(with id: String) async throws -> String?
+    func getProductDescription(with id: String) async throws -> String
 }
