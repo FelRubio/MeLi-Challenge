@@ -11,5 +11,7 @@ public protocol ProductServiceProtocol {
     ///
     /// - Parameter query: The search query string.
     /// - Returns: An array of `Product` that match the query.
-    func searchProductsBy(_ query: String) -> [Product]
+    func searchProductsBy(_ query: String) async throws -> [Product]
+    
+    func getProductDetail(with id: String) async throws -> ProductDetail?
 }
