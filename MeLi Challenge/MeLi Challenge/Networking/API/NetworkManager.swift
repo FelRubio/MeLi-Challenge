@@ -46,8 +46,10 @@ public class NetworkManager {
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
                 var response: String?
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
 
-                response = try? JSONSerialization.jsonObject(with: data) as? String
+                response = String(data: jsonData, encoding: .utf8)
 
                 throw NetworkError.badStatusCode(statusCode, response)
             }
@@ -106,8 +108,10 @@ public class NetworkManager {
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
                 var response: String?
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
 
-                response = try? JSONSerialization.jsonObject(with: data) as? String
+                response = String(data: jsonData, encoding: .utf8)
 
                 throw NetworkError.badStatusCode(statusCode, response)
             }
@@ -166,8 +170,10 @@ public class NetworkManager {
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
                 var response: String?
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
 
-                response = try? JSONSerialization.jsonObject(with: data) as? String
+                response = String(data: jsonData, encoding: .utf8)
 
                 throw NetworkError.badStatusCode(statusCode, response)
             }
