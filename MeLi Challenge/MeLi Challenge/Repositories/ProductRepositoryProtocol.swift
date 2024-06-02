@@ -27,4 +27,11 @@ public protocol ProductRepositoryProtocol {
     /// - Returns: The description of the product as a `String`.
     /// - Throws: An error if the fetch fails.
     func getProductDescription(with id: String) async throws -> String
+    
+    /// Fetches promotions asynchronously.
+    ///
+    /// This method retrieves the current promotions available.
+    ///
+    /// - Throws: An error if the fetch operation fails.
+    func fetchPromotions() async throws -> [Product]
 }

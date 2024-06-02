@@ -19,4 +19,8 @@ public struct ProductService: ProductServiceProtocol {
     public func getProductDetail(with id: String) async throws -> ProductDetail? {
         try await repository.getProductDetailWith(productIdentifier: id)
     }
+    
+    public func getPromotions() async throws -> [Product] {
+        try await repository.fetchPromotions()
+    }
 }

@@ -56,4 +56,21 @@ public class ProductRepository: ProductRepositoryProtocol {
             throw error
         }
     }
+    
+    public func fetchPromotions() async throws -> [Product] {
+        do {
+            let url = APIEndpoints.searchProducts.buildEndpointWith(baseURL: "https://api.mercadolibre.com/")
+            let result: FetchProductsResults = try await apiClient.request(
+                url: url,
+                method: .get,
+                params: [
+                    .init(name: "status", value: "active"),
+                    .init(name: "q", value: "promotions")
+                ]
+            )
+            return result.results.elements.compactMap {
+                ProductTranslator.translate(from: $0)
+            }
+        }
+    }
 }
