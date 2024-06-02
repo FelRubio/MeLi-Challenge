@@ -6,5 +6,5 @@
 //
 
 public struct FetchProductsResults: Decodable {
-    public let results: [ProductDTO]
+    public let results: DecodableList<ProductDTO>
 }
