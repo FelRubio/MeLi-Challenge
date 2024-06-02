@@ -65,4 +65,21 @@ public struct Product: Identifiable, Hashable {
         self.shippingData = shippingData
         self.installmentsData = installmentsData
     }
+
+    /// Generates a sample `Product` instance with random data.
+    /// - Returns: A `Product` instance with random data.
+    public static func randomSample() -> Product {
+        return Product(
+            id: UUID().uuidString,
+            title: "Sample Product \(Int.random(in: 1...1000))",
+            thumbnailURL: "https://picsum.photos/200",
+            price: Int.random(in: 1...1000) * 100,
+            originalPrice: Bool.random() ? Int.random(in: 1...1000) * 100 : nil,
+            currencyId: ["USD", "EUR", "GBP", "COP"].randomElement()!,
+            condition: ["New", "Used", "Refurbished"].randomElement()!,
+            quantityAvailable: Int.random(in: 1...100),
+            shippingData: ShippingData.randomSample(),
+            installmentsData: InstallmentsData.randomSample()
+        )
+    }
 }

@@ -25,3 +25,15 @@ public struct InstallmentsData: Hashable {
         self.currencyId = currencyId
     }
 }
+
+extension InstallmentsData {
+    /// Generates a sample `InstallmentsData` instance with random data.
+    /// - Returns: An `InstallmentsData` instance with random data.
+    public static func randomSample() -> InstallmentsData {
+        return InstallmentsData(
+            quantity: Int.random(in: 1...24),
+            amount: Double.random(in: 10...1000),
+            currencyId: ["USD", "EUR", "GBP"].randomElement()!
+        )
+    }
+}
