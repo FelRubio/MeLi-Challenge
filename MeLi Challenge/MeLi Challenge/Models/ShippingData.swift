@@ -21,3 +21,15 @@ public struct ShippingData: Hashable {
         self.freeShipping = freeShipping
     }
 }
+
+// Extensions to generate random samples for ShippingData and InstallmentsData
+extension ShippingData {
+    /// Generates a sample `ShippingData` instance with random data.
+    /// - Returns: A `ShippingData` instance with random data.
+    public static func randomSample() -> ShippingData {
+        return ShippingData(
+            storePickUp: Bool.random(),
+            freeShipping: Bool.random()
+        )
+    }
+}

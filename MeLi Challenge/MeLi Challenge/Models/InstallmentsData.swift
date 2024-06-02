@@ -11,8 +11,6 @@ public struct InstallmentsData: Hashable {
     public let quantity: Int
     /// The amount for each installment.
     public let amount: Double
-    /// The interest rate for the installments.
-    public let rate: Int
     /// The currency ID for the installment amount.
     public let currencyId: String
 
@@ -20,12 +18,22 @@ public struct InstallmentsData: Hashable {
     /// - Parameters:
     ///   - quantity: The number of installments.
     ///   - amount: The amount for each installment.
-    ///   - rate: The interest rate for the installments.
     ///   - currencyId: The currency ID for the installment amount.
-    public init(quantity: Int, amount: Double, rate: Int, currencyId: String) {
+    public init(quantity: Int, amount: Double, currencyId: String) {
         self.quantity = quantity
         self.amount = amount
-        self.rate = rate
         self.currencyId = currencyId
+    }
+}
+
+extension InstallmentsData {
+    /// Generates a sample `InstallmentsData` instance with random data.
+    /// - Returns: An `InstallmentsData` instance with random data.
+    public static func randomSample() -> InstallmentsData {
+        return InstallmentsData(
+            quantity: Int.random(in: 1...24),
+            amount: Double.random(in: 10...1000),
+            currencyId: ["USD", "EUR", "GBP"].randomElement()!
+        )
     }
 }
