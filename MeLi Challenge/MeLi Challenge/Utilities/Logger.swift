@@ -12,7 +12,8 @@ enum LogLevel: String {
 }
 
 /// A utility class for loggin messages with different levels of severity.
-class Logger {
+struct Logger {
+    private init() { }
     /// The current allowed log level, determined by environment variables or build configuration.
     static var logLevel: LogLevel = {
         // Sets the log level based on the environment variable "LOG_LEVEL" that is on the .xconfig file
