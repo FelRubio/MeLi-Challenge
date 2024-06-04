@@ -1,0 +1,409 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ OFF" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ OFF"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ OFF"
+          }
+        }
+      }
+    },
+    "BAD_FORMATED_URL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad formatted URL."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL mal formateada."
+          }
+        }
+      }
+    },
+    "BAD_STATUS_CODE %lld %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad status code: %1$lld response: %2$@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad status code: %1$lld response: %2$@"
+          }
+        }
+      }
+    },
+    "CHARATACTERISTICS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characteristics"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caracteristicas"
+          }
+        }
+      }
+    },
+    "COULD_NOT_FECTH_PRODUCTS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and couldn't get products."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal y no se pudo obtener productos."
+          }
+        }
+      }
+    },
+    "COULD_NOT_GET_PRODUCT_DESCRIPTION %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and the description for this product could not be obtained."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal y no se pudo obtener la descripción para este producto."
+          }
+        }
+      }
+    },
+    "COULD_NOT_GET_PRODUCT_DETAIL %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and the details for this product could not be obtained."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Algo salió mal y no se pudo obtener los detalles para este producto."
+          }
+        }
+      }
+    },
+    "COULD_NOT_GET_PROMOTIONS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and you couldn't get the promotions."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal y no se pudo obtener las promociones."
+          }
+        }
+      }
+    },
+    "DEFAULT_ERROR_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unexpected error has occurred, please try again later. If the problem persists, please contact support."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha ocurrido un error inesperado, por favor inténtalo de nuevo mas tarde. Si el problema persiste contacta a soporte por favor."
+          }
+        }
+      }
+    },
+    "DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción"
+          }
+        }
+      }
+    },
+    "FREE_SHIPPING_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Free shipping !"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Envío gratis!"
+          }
+        }
+      }
+    },
+    "HOME_NAV_TITLE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hogar"
+          }
+        }
+      }
+    },
+    "IN %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En %@"
+          }
+        }
+      }
+    },
+    "NETWORK_ERROR_DEFAULT_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Network error, please try again later."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de conexión, por favor intenta más tarde."
+          }
+        }
+      }
+    },
+    "NETWORK_ISSUE_TITLE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Looks like we have a Network issue"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Parece que hay problema de conexión!"
+          }
+        }
+      }
+    },
+    "NO_CHARACTERISTICS_FOUND" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't find any characteristics for this product."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No pudimos encontrar alguna característica para este producto."
+          }
+        }
+      }
+    },
+    "NO_INTERNET_CONNECTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Internet connection."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay conexión a internet."
+          }
+        }
+      }
+    },
+    "NO_PRODUCTS_FOUND" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No products found."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se encontraron productos."
+          }
+        }
+      }
+    },
+    "PRICE_PLACEHOLDER" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " $ 999.999"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " $ 999.999"
+          }
+        }
+      }
+    },
+    "PRODUCT_DETAIL_NAV_TITLE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Product details"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles de producto"
+          }
+        }
+      }
+    },
+    "PRODUCT_NAME_PLACEHOLDER" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu velit eros. Vestibulum vel erat lectus. Aliquam faucibus ipsum sed nunc venenatis condimentum."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu velit eros. Vestibulum vel erat lectus. Aliquam faucibus ipsum sed nunc venenatis condimentum."
+          }
+        }
+      }
+    },
+    "RETRY" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Re intentar"
+          }
+        }
+      }
+    },
+    "SOMETHING_WENT_WRONG" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ops, something went wrong!"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ops, algo has salido mal!"
+          }
+        }
+      }
+    },
+    "STORE_PICK_UP_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Available to pick up at store."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disponible para recoger en tienda."
+          }
+        }
+      }
+    },
+    "UNKNOWN_BUILD" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UNKNOWN BUILD"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UNKNOWN BUILD"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
