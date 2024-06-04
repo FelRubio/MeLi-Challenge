@@ -5,6 +5,8 @@
 //  Created by Felipe on 27/05/24.
 //
 
+import Foundation
+
 public enum NetworkError: Error {
     /// Indicates that the URL provided for the network request is not valid.
     case badURL
@@ -26,4 +28,25 @@ public enum NetworkError: Error {
     /// - Parameters:
     ///   - Error: The original error that caused the network error.
     case other(Error)
+}
+
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .badURL:
+            return String(localized: "BAD_FORMATED_URL")
+        case .badStatusCode(let code, let response):
+            return String(localized: "BAD_STATUS_CODE \(code) \(response ?? "")")
+        case .noInternetConnection:
+            return String(localized: "NO_INTERNET_CONNECTION")
+        case .other(let error):
+            if let localizedError = error as? any LocalizedError {
+                return localizedError.errorDescription
+            }
+            fallthrough
+            
+        default:
+            return String(localized: "NETWORK_ERROR_DEFAULT_DESCRIPTION")
+        }
+    }
 }

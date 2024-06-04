@@ -17,6 +17,38 @@
         }
       }
     },
+    "BAD_FORMATED_URL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad formatted URL."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL mal formateada."
+          }
+        }
+      }
+    },
+    "BAD_STATUS_CODE %lld %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad status code: %1$lld response: %2$@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bad status code: %1$lld response: %2$@"
+          }
+        }
+      }
+    },
     "CHARATACTERISTICS" : {
       "localizations" : {
         "en" : {
@@ -29,6 +61,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Caracteristicas"
+          }
+        }
+      }
+    },
+    "COULD_NOT_FECTH_PRODUCTS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and couldn't get products."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal y no se pudo obtener productos."
+          }
+        }
+      }
+    },
+    "COULD_NOT_GET_PRODUCT_DESCRIPTION %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and the description for this product could not be obtained."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal y no se pudo obtener la descripción para este producto."
+          }
+        }
+      }
+    },
+    "COULD_NOT_GET_PRODUCT_DETAIL %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and the details for this product could not be obtained."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Algo salió mal y no se pudo obtener los detalles para este producto."
+          }
+        }
+      }
+    },
+    "COULD_NOT_GET_PROMOTIONS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong and you couldn't get the promotions."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal y no se pudo obtener las promociones."
           }
         }
       }
@@ -98,6 +194,32 @@
         }
       }
     },
+    "Looks like we have a network issue" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parece que tenemos un problema de conexión."
+          }
+        }
+      }
+    },
+    "NETWORK_ERROR_DEFAULT_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Network error, please try again later."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problema de conexión, por favor intenta más tarde."
+          }
+        }
+      }
+    },
     "No products found." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -127,6 +249,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No pudimos encontrar alguna característica para este producto."
+          }
+        }
+      }
+    },
+    "NO_INTERNET_CONNECTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Internet connection."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay conexión a internet."
           }
         }
       }
@@ -196,6 +334,9 @@
           }
         }
       }
+    },
+    "Retry" : {
+
     },
     "STORE_PICK_UP_LABEL" : {
       "localizations" : {
