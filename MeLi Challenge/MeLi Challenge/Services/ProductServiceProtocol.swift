@@ -14,4 +14,6 @@ public protocol ProductServiceProtocol {
     func searchProductsBy(_ query: String) async throws -> [Product]
     
     func getProductDetail(with id: String) async throws -> ProductDetail?
+    
+    func getPromotions() async throws -> [Product]
 }
