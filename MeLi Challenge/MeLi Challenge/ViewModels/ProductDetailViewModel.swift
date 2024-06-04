@@ -10,6 +10,7 @@ import Foundation
 public class ProductDetailViewModel: ObservableObject {
     @MainActor @Published var productDetail: ProductDetail?
     @MainActor @Published var viewState: ViewState = .processing
+    @MainActor @Published var error: Error?
     
     let product: Product
     
@@ -22,7 +23,10 @@ public class ProductDetailViewModel: ObservableObject {
     
     @MainActor
     public func setProductDetail() async throws {
-        productDetail = try? await productService.getProductDetail(with: product.id)
+        do {
+            error = nil
+            productDetail = try await productService.getProductDetail(with: product.id)
+        }
     }
     
     @MainActor

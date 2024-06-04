@@ -17,21 +17,23 @@ struct ProductDetailView: View {
     var body: some View {
         Group {
             if viewModel.viewState != .processing {
-                contentView
+                if let error = viewModel.error {
+                    ProductErrorView(error: error) {
+                        Task {
+                            await setup()
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                } else {
+                    contentView
+                }
             } else {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
         }
         .task {
-            withAnimation {
-                viewModel.viewState = .processing
-            }
-            try? await viewModel.setProductDetail()
-            withAnimation {
-                viewModel.viewState = .idle
-                print(viewModel.product)
-            }
+            await setup()
         }
     }
     
@@ -134,6 +136,9 @@ struct ProductDetailView: View {
                 }
                 .padding([.horizontal, .bottom])
             }
+            .refreshable {
+                await setup()
+            }
         }
     }
     
@@ -176,6 +181,23 @@ struct ProductDetailView: View {
             .scrollTargetLayout()
         }
         .scrollTargetBehavior(.viewAligned)
+    }
+    
+    private func setup() async {
+        do {
+            withAnimation {
+                viewModel.viewState = .processing
+            }
+            try await viewModel.setProductDetail()
+            withAnimation {
+                viewModel.viewState = .idle
+            }
+        } catch {
+            withAnimation {
+                viewModel.error = error
+                viewModel.viewState = .idle
+            }
+        }
     }
 }
 

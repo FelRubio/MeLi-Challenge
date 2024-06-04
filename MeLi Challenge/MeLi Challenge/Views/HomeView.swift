@@ -13,35 +13,44 @@ struct HomeView: View {
     var body: some View {
         VStack {
             if viewModel.viewState == .idle {
-                if !viewModel.searchResults.isEmpty || !viewModel.promotions.isEmpty {
-                    ScrollView {
-                        LazyVStack {
-                            ForEach(viewModel.homeProducts) { product in
-                                NavigationLink(destination: {
-                                    ProductDetailView(
-                                        viewModel: .init(
-                                            product: product,
-                                            productService: ProductService(repository: ProductRepository())
-                                        )
-                                    )
-                                        .navigationTitle("PRODUCT_DETAIL_NAV_TITLE")
-                                }, label: {
-                                    ProductCardView(product: product)
-                                })
-                                .buttonStyle(.plain)
-                            }
+                if let error = viewModel.error {
+                    ProductErrorView(error: error) {
+                        Task {
+                            try? await viewModel.refreshHome()
                         }
-                        .padding(.horizontal)
                     }
-                    .refreshable {
-                        try? await viewModel.refreshHome()
-                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 } else {
-                    Text("NO_PRODUCTS_FOUND")
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                        .padding()
+                    if !viewModel.searchResults.isEmpty || !viewModel.promotions.isEmpty {
+                        ScrollView {
+                            LazyVStack {
+                                ForEach(viewModel.homeProducts) { product in
+                                    NavigationLink(destination: {
+                                        ProductDetailView(
+                                            viewModel: .init(
+                                                product: product,
+                                                productService: ProductService(repository: ProductRepository())
+                                            )
+                                        )
+                                            .navigationTitle("PRODUCT_DETAIL_NAV_TITLE")
+                                    }, label: {
+                                        ProductCardView(product: product)
+                                    })
+                                    .buttonStyle(.plain)
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        .refreshable {
+                            try? await viewModel.refreshHome()
+                        }
+                    } else {
+                        Text("NO_PRODUCTS_FOUND")
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            .padding()
+                    }
                 }
             } else {
                 ProgressView()

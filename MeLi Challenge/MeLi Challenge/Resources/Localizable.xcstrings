@@ -129,6 +129,22 @@
         }
       }
     },
+    "DEFAULT_ERROR_DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unexpected error has occurred, please try again later. If the problem persists, please contact support."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha ocurrido un error inesperado, por favor inténtalo de nuevo mas tarde. Si el problema persiste contacta a soporte por favor."
+          }
+        }
+      }
+    },
     "DESCRIPTION" : {
       "localizations" : {
         "en" : {
@@ -194,16 +210,6 @@
         }
       }
     },
-    "Looks like we have a network issue" : {
-      "localizations" : {
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Parece que tenemos un problema de conexión."
-          }
-        }
-      }
-    },
     "NETWORK_ERROR_DEFAULT_DESCRIPTION" : {
       "localizations" : {
         "en" : {
@@ -220,19 +226,18 @@
         }
       }
     },
-    "No products found." : {
-      "extractionState" : "stale",
+    "NETWORK_ISSUE_TITLE" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No products found."
+            "value" : "Looks like we have a Network issue"
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "No se encontraron productos."
+            "value" : "Parece que hay problema de conexión!"
           }
         }
       }
@@ -335,8 +340,37 @@
         }
       }
     },
-    "Retry" : {
-
+    "RETRY" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Re intentar"
+          }
+        }
+      }
+    },
+    "SOMETHING_WENT_WRONG" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ops, something went wrong!"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ops, algo has salido mal!"
+          }
+        }
+      }
     },
     "STORE_PICK_UP_LABEL" : {
       "localizations" : {
