@@ -11,6 +11,7 @@ import Combine
 public class HomeViewModel: ObservableObject {
     @MainActor @Published var searchQuery: String = ""
     @MainActor @Published var searchResults: [Product] = []
+    @MainActor @Published var promotions: [Product] = []
     @MainActor @Published var viewState: ViewState = .idle
     
     private var cancellables = Set<AnyCancellable>()
@@ -29,6 +30,42 @@ public class HomeViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    @MainActor
+    var homeProducts: [Product] {
+        if searchResults.isEmpty {
+            return promotions
+        }
+        
+        return searchResults
+    }
+    
+    @MainActor
+    public func refreshHome() async throws {
+        do {
+            viewState = .processing
+            if searchQuery.isEmpty {
+                try await setHomeProducts()
+            } else {
+                performSearch(query: searchQuery)
+            }
+            viewState = .idle
+        } catch {
+            viewState = .idle
+        }
+    }
+    
+    @MainActor
+    public func setHomeProducts() async throws {
+        do {
+            let products = try await productService.getPromotions()
+            if promotions != products {
+                promotions = products
+            }
+        } catch {
+            Logger.log("\(error.localizedDescription)", level: .debug)
+        }
+    }
+    
     private func performSearch(query: String) {
         // Cancel the previous search task if it is still running
         searchTask?.cancel()
@@ -36,6 +73,11 @@ public class HomeViewModel: ObservableObject {
         searchTask = Task { @MainActor in
             do {
                 viewState = .processing
+                guard !query.isEmpty else {
+                    self.searchResults = []
+                    viewState = .idle
+                    return
+                }
                 let results = try await productService.searchProductsBy(searchQuery.lowercased())
                 
                 guard !Task.isCancelled else {

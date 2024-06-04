@@ -13,10 +13,10 @@ struct HomeView: View {
     var body: some View {
         VStack {
             if viewModel.viewState == .idle {
-                if !viewModel.searchResults.isEmpty {
+                if !viewModel.searchResults.isEmpty || !viewModel.promotions.isEmpty {
                     ScrollView {
                         LazyVStack {
-                            ForEach(viewModel.searchResults) { product in
+                            ForEach(viewModel.homeProducts) { product in
                                 NavigationLink(destination: {
                                     ProductDetailView(
                                         viewModel: .init(
@@ -33,6 +33,9 @@ struct HomeView: View {
                         }
                         .padding(.horizontal)
                     }
+                    .refreshable {
+                        try? await viewModel.refreshHome()
+                    }
                 } else {
                     Text("NO_PRODUCTS_FOUND")
                         .multilineTextAlignment(.center)
@@ -44,6 +47,11 @@ struct HomeView: View {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
+        }
+        .task {
+            viewModel.viewState = .processing
+            try? await viewModel.setHomeProducts()
+            viewModel.viewState = .idle
         }
         .background(Color(.secondarySystemBackground))
         .navigationTitle("HOME_NAV_TITLE")
