@@ -11,7 +11,8 @@ public class ProductRepository: ProductRepositoryProtocol {
     public func fetchProductsBy(_ query: String) async throws -> [Product] {
         do {
             Logger.log("Fetching products by query: \(query)", level: .info)
-            let url = APIEndpoints.searchProducts.buildEndpointWith(baseURL: "https://api.mercadolibre.com/")
+            let baseURL = try Configuration.value(for: "API_URL") as String
+            let url = APIEndpoints.searchProducts.buildEndpointWith(baseURL: "https://\(baseURL)")
             let result: FetchProductsResults = try await apiClient.request(
                 url: url,
                 method: .get,
@@ -34,7 +35,8 @@ public class ProductRepository: ProductRepositoryProtocol {
     public func getProductDetailWith(productIdentifier: String) async throws -> ProductDetail? {
         do {
             Logger.log("Getting product details with product Id: \(productIdentifier)", level: .info)
-            let url = APIEndpoints.fetchProduct.buildEndpointWith(baseURL: "https://api.mercadolibre.com/") + productIdentifier
+            let baseURL = try Configuration.value(for: "API_URL") as String
+            let url = APIEndpoints.fetchProduct.buildEndpointWith(baseURL: "https://\(baseURL)") + productIdentifier
             let result: ProductDetailDTO = try await apiClient.request(url: url, method: .get)
             let description = try? await getProductDescription(with: productIdentifier)
             let detail = ProductDetailTranslator.translate(from: result, with: description ?? "")
@@ -49,7 +51,8 @@ public class ProductRepository: ProductRepositoryProtocol {
     public func getProductDescription(with id: String) async throws -> String {
         do {
             Logger.log("Getting product description with product Id: \(id)", level: .info)
-            let url = APIEndpoints.fetchProduct.buildEndpointWith(baseURL: "https://api.mercadolibre.com/") + "\(id)/" + APIEndpoints.description.path
+            let baseURL = try Configuration.value(for: "API_URL") as String
+            let url = APIEndpoints.fetchProduct.buildEndpointWith(baseURL: "https://\(baseURL)") + "\(id)/" + APIEndpoints.description.path
             let result: DescriptionDTO = try await apiClient.request(url: url, method: .get)
             Logger.log("Description found for product \(id)", level: .info)
             return result.text
@@ -62,7 +65,8 @@ public class ProductRepository: ProductRepositoryProtocol {
     public func fetchPromotions() async throws -> [Product] {
         do {
             Logger.log("Fetching promotion products...", level: .info)
-            let url = APIEndpoints.searchProducts.buildEndpointWith(baseURL: "https://api.mercadolibre.com/")
+            let baseURL = try Configuration.value(for: "API_URL") as String
+            let url = APIEndpoints.searchProducts.buildEndpointWith(baseURL: "https://\(baseURL)")
             let result: FetchProductsResults = try await apiClient.request(
                 url: url,
                 method: .get,
