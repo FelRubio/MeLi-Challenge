@@ -10,6 +10,13 @@ import Foundation
 public class ProductDetailViewModel: ObservableObject {
     @MainActor @Published var productDetail: ProductDetail?
     @MainActor @Published var viewState: ViewState = .processing
+    @MainActor @Published var error: Error? {
+        didSet {
+            if let error {
+                Logger.log(error.localizedDescription, level: .error)
+            }
+        }
+    }
     
     let product: Product
     
@@ -22,7 +29,15 @@ public class ProductDetailViewModel: ObservableObject {
     
     @MainActor
     public func setProductDetail() async throws {
-        productDetail = try? await productService.getProductDetail(with: product.id)
+        do {
+            let detail = try await productService.getProductDetail(with: product.id)
+            if productDetail != detail {
+                productDetail = detail
+            }
+        } catch {
+            productDetail = nil
+            throw error
+        }
     }
     
     @MainActor

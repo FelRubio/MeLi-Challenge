@@ -24,6 +24,8 @@
 		5507A7CB2C0F1C960035D0AF /* ConfigReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507A7CA2C0F1C960035D0AF /* ConfigReader.swift */; };
 		553614AC2C0F1F5D00664DE9 /* MeLi-Challenge-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */; };
 		554F6FFA2C046FFD005F4803 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F6FF92C046FFD005F4803 /* ProductDetailView.swift */; };
+		5571A8FF2C0F7AE70071B6CA /* ProductErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571A8FE2C0F7AE70071B6CA /* ProductErrorView.swift */; };
+		5586888B2C0F3C62006D88F2 /* ProductError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5586888A2C0F3C62006D88F2 /* ProductError.swift */; };
 		55CAD9092C0449520058E54A /* MeLi_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */; };
 		55CAD90B2C0449520058E54A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD90A2C0449520058E54A /* ContentView.swift */; };
 		55CAD90D2C0449540058E54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CAD90C2C0449540058E54A /* Assets.xcassets */; };
@@ -89,6 +91,8 @@
 		5507A7CA2C0F1C960035D0AF /* ConfigReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigReader.swift; sourceTree = "<group>"; };
 		553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MeLi-Challenge-Info.plist"; sourceTree = SOURCE_ROOT; };
 		554F6FF92C046FFD005F4803 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		5571A8FE2C0F7AE70071B6CA /* ProductErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductErrorView.swift; sourceTree = "<group>"; };
+		5586888A2C0F3C62006D88F2 /* ProductError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductError.swift; sourceTree = "<group>"; };
 		55CAD9052C0449520058E54A /* MeLi Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeLi Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLi_ChallengeApp.swift; sourceTree = "<group>"; };
 		55CAD90A2C0449520058E54A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -240,6 +244,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		558688892C0F3C4A006D88F2 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				5586888A2C0F3C62006D88F2 /* ProductError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		55CAD8FC2C0449520058E54A = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +273,7 @@
 		55CAD9072C0449520058E54A /* MeLi Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				558688892C0F3C4A006D88F2 /* Errors */,
 				553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */,
 				55DAFBAD2C0CA9FC00D60797 /* Configurations */,
 				55CAD90E2C0449540058E54A /* MeLi_Challenge.entitlements */,
@@ -373,6 +386,7 @@
 				554F6FF92C046FFD005F4803 /* ProductDetailView.swift */,
 				55E7038B2C08E14900DD6CF1 /* ProductAttributeView.swift */,
 				55E7038D2C091F7300DD6CF1 /* ShippingDataView.swift */,
+				5571A8FE2C0F7AE70071B6CA /* ProductErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -516,6 +530,7 @@
 				55E5C8042C0763B700723477 /* HomeViewModel.swift in Sources */,
 				55EEDCE62C05E210000091A2 /* ShippingDataDTO.swift in Sources */,
 				55E5C8062C07651200723477 /* ProductService.swift in Sources */,
+				5571A8FF2C0F7AE70071B6CA /* ProductErrorView.swift in Sources */,
 				55D84F7A2C08B05A003916BC /* ProductDetailViewModel.swift in Sources */,
 				5504D2512C0483CF007225AB /* InstallmentsData.swift in Sources */,
 				55EEDCE42C05E112000091A2 /* ProductAttributeDTO.swift in Sources */,
@@ -527,6 +542,7 @@
 				55F3289B2C0454A30037D987 /* ProductCardView.swift in Sources */,
 				5504D2BB2C049527007225AB /* ProductRepositoryProtocol.swift in Sources */,
 				55E5C7FD2C0756FF00723477 /* DescriptionDTO.swift in Sources */,
+				5586888B2C0F3C62006D88F2 /* ProductError.swift in Sources */,
 				55E5C80A2C076D8000723477 /* ViewState.swift in Sources */,
 				5504D2532C04845E007225AB /* ShippingData.swift in Sources */,
 				5504D24D2C0481C6007225AB /* ProductAttribute.swift in Sources */,

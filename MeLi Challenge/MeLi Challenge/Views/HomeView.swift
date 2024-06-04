@@ -13,35 +13,58 @@ struct HomeView: View {
     var body: some View {
         VStack {
             if viewModel.viewState == .idle {
-                if !viewModel.searchResults.isEmpty || !viewModel.promotions.isEmpty {
-                    ScrollView {
-                        LazyVStack {
-                            ForEach(viewModel.homeProducts) { product in
-                                NavigationLink(destination: {
-                                    ProductDetailView(
-                                        viewModel: .init(
-                                            product: product,
-                                            productService: ProductService(repository: ProductRepository())
-                                        )
-                                    )
-                                        .navigationTitle("PRODUCT_DETAIL_NAV_TITLE")
-                                }, label: {
-                                    ProductCardView(product: product)
-                                })
-                                .buttonStyle(.plain)
+                if let error = viewModel.error {
+                    ProductErrorView(error: error) {
+                        Task {
+                            do {
+                                withAnimation {
+                                    viewModel.viewState = .processing
+                                    viewModel.error = nil
+                                }
+                                try await viewModel.refreshHome()
+                                withAnimation {
+                                    viewModel.viewState = .idle
+                                }
+                            } catch {
+                                withAnimation {
+                                    viewModel.error = error
+                                    viewModel.viewState = .idle
+                                }
                             }
                         }
-                        .padding(.horizontal)
                     }
-                    .refreshable {
-                        try? await viewModel.refreshHome()
-                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 } else {
-                    Text("NO_PRODUCTS_FOUND")
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                        .padding()
+                    if !viewModel.searchResults.isEmpty || !viewModel.promotions.isEmpty {
+                        ScrollView {
+                            LazyVStack {
+                                ForEach(viewModel.homeProducts) { product in
+                                    NavigationLink(destination: {
+                                        ProductDetailView(
+                                            viewModel: .init(
+                                                product: product,
+                                                productService: ProductService(repository: ProductRepository())
+                                            )
+                                        )
+                                            .navigationTitle("PRODUCT_DETAIL_NAV_TITLE")
+                                    }, label: {
+                                        ProductCardView(product: product)
+                                    })
+                                    .buttonStyle(.plain)
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        .refreshable {
+                            try? await viewModel.refreshHome()
+                        }
+                    } else {
+                        Text("NO_PRODUCTS_FOUND")
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            .padding()
+                    }
                 }
             } else {
                 ProgressView()
@@ -49,9 +72,21 @@ struct HomeView: View {
             }
         }
         .task {
-            viewModel.viewState = .processing
-            try? await viewModel.setHomeProducts()
-            viewModel.viewState = .idle
+            do {
+                withAnimation {
+                    viewModel.viewState = .processing
+                    viewModel.error = nil
+                }
+                try await viewModel.setHomeProducts()
+                withAnimation {
+                    viewModel.viewState = .idle
+                }
+            } catch {
+                withAnimation {
+                    viewModel.error = error
+                    viewModel.viewState = .idle
+                }
+            }
         }
         .background(Color(.secondarySystemBackground))
         .navigationTitle("HOME_NAV_TITLE")
