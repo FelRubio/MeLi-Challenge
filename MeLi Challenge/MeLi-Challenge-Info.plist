@@ -4,5 +4,7 @@
 <dict>
 	<key>LOG_LEVEL</key>
 	<string>$(LOG_LEVEL)</string>
+	<key>API_URL</key>
+	<string>$(API_URL)</string>
 </dict>
 </plist>
