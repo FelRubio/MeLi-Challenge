@@ -212,6 +212,22 @@
           }
         }
       }
+    },
+    "UNKNOWN_BUILD" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UNKNOWN BUILD"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UNKNOWN BUILD"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
