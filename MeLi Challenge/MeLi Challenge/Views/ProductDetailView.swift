@@ -8,45 +8,182 @@
 import SwiftUI
 
 struct ProductDetailView: View {
-    private let images: [Color] = [.gray, .blue, .red] // Placeholder data
+    @ObservedObject private var viewModel: ProductDetailViewModel
+    
+    init(viewModel: ProductDetailViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
+        Group {
+            if viewModel.viewState != .processing {
+                contentView
+            } else {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            }
+        }
+        .task {
+            withAnimation {
+                viewModel.viewState = .processing
+            }
+            try? await viewModel.setProductDetail()
+            withAnimation {
+                viewModel.viewState = .idle
+                print(viewModel.product)
+            }
+        }
+    }
+    
+    var contentView: some View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    // Product name
-                    Text("PRODUCT_NAME_PLACEHOLDER")
-                        .font(.title3)
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Group {
+                        // Product name
+                        Text(viewModel.productName)
+                            .font(.title3)
+                        // Condition
+                        Text(viewModel.product.condition)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Divider()
                     
                     // Scrollable images
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 10) {
-                            ForEach(images, id: \.self) { color in
-                                Rectangle()
-                                    .fill(color.opacity(0.8))
-                                    .containerRelativeFrame(.horizontal)
-                            }
-                        }
-                        .scrollTargetLayout()
-                    }
-                    .scrollTargetBehavior(.viewAligned)
-                    .frame(height: geometry.size.width)
+                    productImages
+                        .frame(height: geometry.size.width)
                     
-                    // TODO: Product details
-                    Text("Product details:")
-                        .font(.title3)
+                    Divider()
+                    
+                    // Pricing data
+                    if viewModel.hasDiscount {
+                        Text(viewModel.discountedPrice)
+                            .fontDesign(.rounded)
+                            .foregroundStyle(.secondary)
+                            .strikethrough()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    
+                    HStack {
+                        Text(viewModel.productPrice)
+                            .font(.title)
+                            .fontDesign(.rounded)
+                        
+                        if viewModel.hasDiscount {
+                            Text("\(viewModel.discountedPercentage.formatted(.percent)) OFF")
+                                .bold()
+                                .foregroundStyle(.green)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Text("IN \(viewModel.installmentsInfoString)")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom)
+                        
+
+                    // Shipping information
+                    ShippingDataView(shippingData: viewModel.product.shippingData)
+                        .alignment(.leading)
+                        .multilineTextAlignment(.leading)
+                    
+                    Divider()
+                    
+                    // Description
+                    if let description = viewModel.productDetail?.description {
+                        Text("DESCRIPTION")
+                            .font(.title2)
+                            .bold()
+                            .fontDesign(.rounded)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Text(description)
+                            .multilineTextAlignment(.leading)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Divider()
+                    }
+                    
+                    // Characteristics list
+                    Text("CHARATACTERISTICS")
+                        .font(.title2)
                         .bold()
+                        .fontDesign(.rounded)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
+                    if let attributes = viewModel.productDetail?.attributes {
+                        ForEach(attributes) { attribute in
+                            ProductAttributeView(attribute: attribute)
+                                .padding()
+                            
+                            Divider()
+                        }
+                    } else {
+                        Text("NO_CHARACTERISTICS_FOUND")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
                 }
                 .padding([.horizontal, .bottom])
             }
         }
-
+    }
+    
+    var defaultThumbnail: some View {
+        Image(systemName: "photo.on.rectangle")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .padding()
+            .foregroundStyle(.secondary)
+            .opacity(0.7)
+    }
+    
+    var productImages: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 10) {
+                ForEach(viewModel.productImages, id: \.self) { image in
+                    AsyncImage(url: image) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                                .containerRelativeFrame(.horizontal)
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .containerRelativeFrame(.horizontal)
+                        case .failure(let error):
+                            defaultThumbnail
+                                .containerRelativeFrame(.horizontal)
+                                .task {
+                                    print(error)
+                                }
+                        @unknown default:
+                            defaultThumbnail
+                                .containerRelativeFrame(.horizontal)
+                        }
+                    }
+                }
+            }
+            .scrollTargetLayout()
+        }
+        .scrollTargetBehavior(.viewAligned)
     }
 }
 
 #Preview {
-    ProductDetailView()
+    ProductDetailView(
+        viewModel: .init(
+            product: .randomSample(),
+            productService: ProductService(repository: MockUpProductRepository())
+        )
+    )
 }
