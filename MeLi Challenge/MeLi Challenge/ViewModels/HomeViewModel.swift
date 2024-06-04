@@ -13,7 +13,13 @@ public class HomeViewModel: ObservableObject {
     @MainActor @Published var searchResults: [Product] = []
     @MainActor @Published var promotions: [Product] = []
     @MainActor @Published var viewState: ViewState = .idle
-    @MainActor @Published var error: Error?
+    @MainActor @Published var error: Error? {
+        didSet {
+            if let error {
+                Logger.log(error.localizedDescription, level: .error)
+            }
+        }
+    }
     
     private var cancellables = Set<AnyCancellable>()
     private var searchTask: Task<Void, Never>?
@@ -44,9 +50,7 @@ public class HomeViewModel: ObservableObject {
     public func refreshHome() async throws {
         do {
             if searchQuery.isEmpty {
-                viewState = .processing
                 try await setHomeProducts()
-                viewState = .idle
             } else {
                 performSearch(query: searchQuery)
             }
@@ -55,15 +59,9 @@ public class HomeViewModel: ObservableObject {
     
     @MainActor
     public func setHomeProducts() async throws {
-        do {
-            self.error = nil
-            let products = try await productService.getPromotions()
-            if promotions != products {
-                promotions = products
-            }
-        } catch {
-            Logger.log("\(error.localizedDescription)", level: .debug)
-            self.error = error
+        let products = try await productService.getPromotions()
+        if promotions != products {
+            promotions = products
         }
     }
     
@@ -91,9 +89,8 @@ public class HomeViewModel: ObservableObject {
                 self.viewState = .idle
 
             } catch {
-                Logger.log("Search failed: \(error.localizedDescription)", level: .error)
-                viewState = .idle
                 self.error = error
+                viewState = .idle
             }
         }
     }

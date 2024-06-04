@@ -16,7 +16,21 @@ struct HomeView: View {
                 if let error = viewModel.error {
                     ProductErrorView(error: error) {
                         Task {
-                            try? await viewModel.refreshHome()
+                            do {
+                                withAnimation {
+                                    viewModel.viewState = .processing
+                                    viewModel.error = nil
+                                }
+                                try await viewModel.refreshHome()
+                                withAnimation {
+                                    viewModel.viewState = .idle
+                                }
+                            } catch {
+                                withAnimation {
+                                    viewModel.error = error
+                                    viewModel.viewState = .idle
+                                }
+                            }
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -58,9 +72,21 @@ struct HomeView: View {
             }
         }
         .task {
-            viewModel.viewState = .processing
-            try? await viewModel.setHomeProducts()
-            viewModel.viewState = .idle
+            do {
+                withAnimation {
+                    viewModel.viewState = .processing
+                    viewModel.error = nil
+                }
+                try await viewModel.setHomeProducts()
+                withAnimation {
+                    viewModel.viewState = .idle
+                }
+            } catch {
+                withAnimation {
+                    viewModel.error = error
+                    viewModel.viewState = .idle
+                }
+            }
         }
         .background(Color(.secondarySystemBackground))
         .navigationTitle("HOME_NAV_TITLE")

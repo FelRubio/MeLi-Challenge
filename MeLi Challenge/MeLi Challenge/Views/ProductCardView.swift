@@ -34,11 +34,8 @@ struct ProductCardView: View {
                         .aspectRatio(contentMode: .fit)
                         .padding()
                         .frame(maxWidth: 120, maxHeight: 120, alignment: .center)
-                case .failure(let error):
+                case .failure(_):
                     defaultThumbnail
-                        .task {
-                            print(error)
-                        }
                 @unknown default:
                     defaultThumbnail
                 }

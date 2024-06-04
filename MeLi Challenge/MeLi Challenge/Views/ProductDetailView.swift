@@ -165,12 +165,9 @@ struct ProductDetailView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .containerRelativeFrame(.horizontal)
-                        case .failure(let error):
+                        case .failure(_):
                             defaultThumbnail
                                 .containerRelativeFrame(.horizontal)
-                                .task {
-                                    print(error)
-                                }
                         @unknown default:
                             defaultThumbnail
                                 .containerRelativeFrame(.horizontal)
@@ -187,6 +184,7 @@ struct ProductDetailView: View {
         do {
             withAnimation {
                 viewModel.viewState = .processing
+                viewModel.error = nil
             }
             try await viewModel.setProductDetail()
             withAnimation {
