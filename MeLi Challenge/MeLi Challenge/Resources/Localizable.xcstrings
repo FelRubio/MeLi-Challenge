@@ -1,6 +1,70 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ OFF" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ OFF"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ OFF"
+          }
+        }
+      }
+    },
+    "CHARATACTERISTICS" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characteristics"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caracteristicas"
+          }
+        }
+      }
+    },
+    "DESCRIPTION" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción"
+          }
+        }
+      }
+    },
+    "FREE_SHIPPING_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Free shipping !"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Envío gratis!"
+          }
+        }
+      }
+    },
     "HOME_NAV_TITLE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -18,18 +82,87 @@
         }
       }
     },
+    "IN %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En %@"
+          }
+        }
+      }
+    },
+    "No products found." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No products found."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se encontraron productos."
+          }
+        }
+      }
+    },
+    "NO_CHARACTERISTICS_FOUND" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We couldn't find any characteristics for this product."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No pudimos encontrar alguna característica para este producto."
+          }
+        }
+      }
+    },
+    "NO_PRODUCTS_FOUND" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No products found."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se encontraron productos."
+          }
+        }
+      }
+    },
     "PRICE_PLACEHOLDER" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : " $ 999.999"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " $ 999.999"
+          }
         }
       }
-    },
-    "Product details:" : {
-
     },
     "PRODUCT_DETAIL_NAV_TITLE" : {
       "localizations" : {
@@ -38,15 +171,44 @@
             "state" : "translated",
             "value" : "Product details"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles de producto"
+          }
         }
       }
     },
     "PRODUCT_NAME_PLACEHOLDER" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu velit eros. Vestibulum vel erat lectus. Aliquam faucibus ipsum sed nunc venenatis condimentum."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu velit eros. Vestibulum vel erat lectus. Aliquam faucibus ipsum sed nunc venenatis condimentum."
+          }
+        }
+      }
+    },
+    "STORE_PICK_UP_LABEL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Available to pick up at store."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disponible para recoger en tienda."
           }
         }
       }
