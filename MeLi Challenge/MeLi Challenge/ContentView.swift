@@ -11,14 +11,24 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             HomeView()
-                .task {
-                    let repo = ProductRepository()
-                    try? await repo.fetchProductsBy("iphone")
-                }
+                .environmentObject(
+                    HomeViewModel(
+                        ProductService(
+                            repository: ProductRepository()
+                        )
+                    )
+                )
         }
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(
+            HomeViewModel(
+                ProductService(
+                    repository: MockUpProductRepository()
+                )
+            )
+        )
 }
