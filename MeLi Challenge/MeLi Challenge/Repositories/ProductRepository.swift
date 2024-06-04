@@ -23,10 +23,7 @@ public class ProductRepository: ProductRepositoryProtocol {
                 ProductTranslator.translate(from: $0)
             }
         } catch {
-#if DEBUG
-            print(error)
-#endif
-            throw error
+            throw ProductError.couldNotFecthProducts(error)
         }
     }
     
@@ -37,10 +34,7 @@ public class ProductRepository: ProductRepositoryProtocol {
             let description = try await getProductDescription(with: productIdentifier)
             return ProductDetailTranslator.translate(from: result, with: description)
         } catch {
-#if DEBUG
-            print(error)
-#endif
-            throw error
+            throw ProductError.couldNotGetDetailsForProduct(productIdentifier, error)
         }
     }
     
@@ -50,10 +44,7 @@ public class ProductRepository: ProductRepositoryProtocol {
             let result: DescriptionDTO = try await apiClient.request(url: url, method: .get)
             return result.text
         } catch {
-#if DEBUG
-            print(error)
-#endif
-            throw error
+            throw ProductError.couldNotGetDescriptionForProduct(id, error)
         }
     }
     
@@ -71,6 +62,8 @@ public class ProductRepository: ProductRepositoryProtocol {
             return result.results.elements.compactMap {
                 ProductTranslator.translate(from: $0)
             }
+        } catch {
+            throw ProductError.couldNotGetPromotions(error)
         }
     }
 }
