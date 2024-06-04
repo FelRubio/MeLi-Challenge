@@ -21,11 +21,14 @@
 		5504D2B22C04914A007225AB /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2B12C04914A007225AB /* EncodableExtensions.swift */; };
 		5504D2B52C04917B007225AB /* EncodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2B42C04917B007225AB /* EncodableError.swift */; };
 		5504D2BB2C049527007225AB /* ProductRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2BA2C049527007225AB /* ProductRepositoryProtocol.swift */; };
+		5507A7CB2C0F1C960035D0AF /* ConfigReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507A7CA2C0F1C960035D0AF /* ConfigReader.swift */; };
+		553614AC2C0F1F5D00664DE9 /* MeLi-Challenge-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */; };
 		554F6FFA2C046FFD005F4803 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F6FF92C046FFD005F4803 /* ProductDetailView.swift */; };
 		55CAD9092C0449520058E54A /* MeLi_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */; };
 		55CAD90B2C0449520058E54A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD90A2C0449520058E54A /* ContentView.swift */; };
 		55CAD90D2C0449540058E54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CAD90C2C0449540058E54A /* Assets.xcassets */; };
 		55CAD9112C0449540058E54A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CAD9102C0449540058E54A /* Preview Assets.xcassets */; };
+		55DAFBB12C0CAAAA00D60797 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DAFBB02C0CAAAA00D60797 /* Logger.swift */; };
 		55E5C7F92C07551200723477 /* ProductDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5C7F82C07551200723477 /* ProductDetailDTO.swift */; };
 		55E5C7FB2C07557D00723477 /* PictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5C7FA2C07557D00723477 /* PictureDTO.swift */; };
 		55E5C7FD2C0756FF00723477 /* DescriptionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E5C7FC2C0756FF00723477 /* DescriptionDTO.swift */; };
@@ -77,6 +80,8 @@
 		5504D2B12C04914A007225AB /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
 		5504D2B42C04917B007225AB /* EncodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableError.swift; sourceTree = "<group>"; };
 		5504D2BA2C049527007225AB /* ProductRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryProtocol.swift; sourceTree = "<group>"; };
+		5507A7CA2C0F1C960035D0AF /* ConfigReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigReader.swift; sourceTree = "<group>"; };
+		553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MeLi-Challenge-Info.plist"; sourceTree = SOURCE_ROOT; };
 		554F6FF92C046FFD005F4803 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		55CAD9052C0449520058E54A /* MeLi Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeLi Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLi_ChallengeApp.swift; sourceTree = "<group>"; };
@@ -84,6 +89,13 @@
 		55CAD90C2C0449540058E54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55CAD90E2C0449540058E54A /* MeLi_Challenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeLi_Challenge.entitlements; sourceTree = "<group>"; };
 		55CAD9102C0449540058E54A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55DAFBAC2C0CA93800D60797 /* Debug Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug Dev.xcconfig"; sourceTree = "<group>"; };
+		55DAFBAE2C0CAA0A00D60797 /* Debug QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug QA.xcconfig"; sourceTree = "<group>"; };
+		55DAFBAF2C0CAA1100D60797 /* Debug Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug Prod.xcconfig"; sourceTree = "<group>"; };
+		55DAFBB02C0CAAAA00D60797 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		55DAFBB22C0CB8FE00D60797 /* Release Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release Dev.xcconfig"; sourceTree = "<group>"; };
+		55DAFBB32C0CB90800D60797 /* Release QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release QA.xcconfig"; sourceTree = "<group>"; };
+		55DAFBB42C0CB91400D60797 /* Release Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release Prod.xcconfig"; sourceTree = "<group>"; };
 		55E5C7F82C07551200723477 /* ProductDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDTO.swift; sourceTree = "<group>"; };
 		55E5C7FA2C07557D00723477 /* PictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDTO.swift; sourceTree = "<group>"; };
 		55E5C7FC2C0756FF00723477 /* DescriptionDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionDTO.swift; sourceTree = "<group>"; };
@@ -178,6 +190,8 @@
 			children = (
 				5504D2B32C04915D007225AB /* Encodable */,
 				55EEDCF72C05F146000091A2 /* DecodableList.swift */,
+				55DAFBB02C0CAAAA00D60797 /* Logger.swift */,
+				5507A7CA2C0F1C960035D0AF /* ConfigReader.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -233,17 +247,19 @@
 		55CAD9072C0449520058E54A /* MeLi Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				55EEDCED2C05ED12000091A2 /* Translators */,
-				55CAD90C2C0449540058E54A /* Assets.xcassets */,
-				55CAD90A2C0449520058E54A /* ContentView.swift */,
+				553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */,
+				55DAFBAD2C0CA9FC00D60797 /* Configurations */,
 				55CAD90E2C0449540058E54A /* MeLi_Challenge.entitlements */,
+				55CAD90A2C0449520058E54A /* ContentView.swift */,
 				55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */,
+				55CAD90C2C0449540058E54A /* Assets.xcassets */,
 				5504D2472C0480F9007225AB /* Models */,
 				5504D2A92C048DF7007225AB /* Networking */,
 				55CAD90F2C0449540058E54A /* Preview Content */,
 				5504D2B92C04951D007225AB /* Repositories */,
 				55EFD99E2C046C060000F42E /* Resources */,
 				55EEDCDD2C05DB0D000091A2 /* Services */,
+				55EEDCED2C05ED12000091A2 /* Translators */,
 				5504D2B02C04913D007225AB /* Utilities */,
 				55F328972C04513F0037D987 /* Views */,
 			);
@@ -256,6 +272,19 @@
 				55CAD9102C0449540058E54A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55DAFBAD2C0CA9FC00D60797 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				55DAFBAC2C0CA93800D60797 /* Debug Dev.xcconfig */,
+				55DAFBAE2C0CAA0A00D60797 /* Debug QA.xcconfig */,
+				55DAFBAF2C0CAA1100D60797 /* Debug Prod.xcconfig */,
+				55DAFBB22C0CB8FE00D60797 /* Release Dev.xcconfig */,
+				55DAFBB32C0CB90800D60797 /* Release QA.xcconfig */,
+				55DAFBB42C0CB91400D60797 /* Release Prod.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		55EEDCDD2C05DB0D000091A2 /* Services */ = {
@@ -405,6 +434,7 @@
 				55CAD9112C0449540058E54A /* Preview Assets.xcassets in Resources */,
 				55CAD90D2C0449540058E54A /* Assets.xcassets in Resources */,
 				55EFD9A02C046C140000F42E /* Localizable.xcstrings in Resources */,
+				553614AC2C0F1F5D00664DE9 /* MeLi-Challenge-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +458,7 @@
 			files = (
 				55EEDCFA2C05F1EA000091A2 /* Endpoints.swift in Sources */,
 				55EEDCF32C05EFF5000091A2 /* ShippmentDataTranslator.swift in Sources */,
+				5507A7CB2C0F1C960035D0AF /* ConfigReader.swift in Sources */,
 				55EEDCF12C05EF10000091A2 /* ProductAttributeTranslator.swift in Sources */,
 				5504D2AF2C048EE0007225AB /* NetworkManager.swift in Sources */,
 				55EEDCE82C05E29E000091A2 /* InstallmentsDataDTO.swift in Sources */,
@@ -438,6 +469,7 @@
 				55EEDCF52C05F073000091A2 /* InstallmentsDataTranslator.swift in Sources */,
 				55EEDCEC2C05E996000091A2 /* ProductRepository.swift in Sources */,
 				5504D2B22C04914A007225AB /* EncodableExtensions.swift in Sources */,
+				55DAFBB12C0CAAAA00D60797 /* Logger.swift in Sources */,
 				55EEDCEA2C05E894000091A2 /* FetchProductsResults.swift in Sources */,
 				55F328992C04515F0037D987 /* HomeView.swift in Sources */,
 				5504D2B52C04917B007225AB /* EncodableError.swift in Sources */,
@@ -477,6 +509,7 @@
 /* Begin XCBuildConfiguration section */
 		5504D2982C048712007225AB /* Debug Prod */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAF2C0CAA1100D60797 /* Debug Prod.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -555,6 +588,7 @@
 		};
 		5504D2992C048712007225AB /* Debug Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAC2C0CA93800D60797 /* Debug Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -633,6 +667,7 @@
 		};
 		5504D29A2C048712007225AB /* Debug QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAE2C0CAA0A00D60797 /* Debug QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -711,6 +746,7 @@
 		};
 		5504D29B2C048712007225AB /* Release Prod */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB42C0CB91400D60797 /* Release Prod.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -782,6 +818,7 @@
 		};
 		5504D29C2C048712007225AB /* Release QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB32C0CB90800D60797 /* Release QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -853,6 +890,7 @@
 		};
 		5504D29D2C048712007225AB /* Release Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB22C0CB8FE00D60797 /* Release Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -924,6 +962,7 @@
 		};
 		55CAD9122C0449540058E54A /* Debug Prod */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAF2C0CAA1100D60797 /* Debug Prod.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -981,11 +1020,13 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = "Debug Prod";
 		};
 		55CAD9132C0449540058E54A /* Release Prod */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB42C0CB91400D60797 /* Release Prod.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1034,12 +1075,15 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_PROD;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 			};
 			name = "Release Prod";
 		};
 		55CAD9152C0449540058E54A /* Debug Prod */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAF2C0CAA1100D60797 /* Debug Prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1051,6 +1095,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1080,6 +1125,7 @@
 		};
 		55CAD9162C0449540058E54A /* Release Prod */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB42C0CB91400D60797 /* Release Prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1091,6 +1137,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1112,6 +1159,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_PROD;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1120,6 +1168,7 @@
 		};
 		55F3288F2C044FEA0037D987 /* Debug QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAE2C0CAA0A00D60797 /* Debug QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1177,11 +1226,13 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = "Debug QA";
 		};
 		55F328902C044FEA0037D987 /* Debug QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAE2C0CAA0A00D60797 /* Debug QA.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1193,6 +1244,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1222,6 +1274,7 @@
 		};
 		55F328912C044FEC0037D987 /* Debug Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAC2C0CA93800D60797 /* Debug Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1279,11 +1332,13 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = "Debug Dev";
 		};
 		55F328922C044FEC0037D987 /* Debug Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAC2C0CA93800D60797 /* Debug Dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1295,6 +1350,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1324,6 +1380,7 @@
 		};
 		55F328932C044FF00037D987 /* Release QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB32C0CB90800D60797 /* Release QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1372,12 +1429,15 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_QA;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 			};
 			name = "Release QA";
 		};
 		55F328942C044FF00037D987 /* Release QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB32C0CB90800D60797 /* Release QA.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1389,6 +1449,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1410,6 +1471,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_QA;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1418,6 +1480,7 @@
 		};
 		55F328952C044FF20037D987 /* Release Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB22C0CB8FE00D60797 /* Release Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1466,12 +1529,15 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_DEV;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
 			};
 			name = "Release Dev";
 		};
 		55F328962C044FF20037D987 /* Release Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBB22C0CB8FE00D60797 /* Release Dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1483,6 +1549,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1504,6 +1571,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_DEV;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
