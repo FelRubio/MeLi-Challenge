@@ -41,23 +41,24 @@ public class NetworkManager {
         }
         
         do {
+            Logger.log("Getting data from URL: \(url)", level: .debug)
             let (data, response) = try await URLSession.shared.data(from: url)
 
+            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+            var requestResponsse: String?
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
+            requestResponsse = String(data: jsonData, encoding: .utf8)
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
-                var response: String?
-                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
-
-                response = String(data: jsonData, encoding: .utf8)
-
-                throw NetworkError.badStatusCode(statusCode, response)
+                throw NetworkError.badStatusCode(statusCode, requestResponsse)
             }
-
+            Logger.log("Success! code: \(statusCode) response?: \(requestResponsse ?? "")", level: .debug)
             return data
         } catch let networkError as NetworkError {
+            Logger.log("Network error: \(networkError)", level: .debug)
             throw networkError
         } catch {
+            Logger.log("Unkown network error: \(NetworkError.other(error))", level: .debug)
             throw NetworkError.other(error)
         }
     }
@@ -101,25 +102,35 @@ public class NetworkManager {
         if let queryParams = params {
             request.url?.append(queryItems: queryParams)
         }
-
+        Logger.log(
+            """
+            Request:
+                URL: \(url)
+                method: \(method)
+                headers: \(headers ?? [:])
+                body: \(body ?? [:])
+                params: \(params ?? [])
+            """,
+            level: .debug
+        )
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
+            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+            var requestResponse: String?
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
 
+            requestResponse = String(data: jsonData, encoding: .utf8)
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
-                var response: String?
-                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
-
-                response = String(data: jsonData, encoding: .utf8)
-
-                throw NetworkError.badStatusCode(statusCode, response)
+                throw NetworkError.badStatusCode(statusCode, requestResponse)
             }
-
+            Logger.log("Success! code: \(statusCode) response?: \(requestResponse ?? "")", level: .debug)
             return data
         } catch let networkError as NetworkError {
+            Logger.log("Network error: \(networkError)", level: .debug)
             throw networkError
         } catch {
+            Logger.log("Unkown network error: \(NetworkError.other(error))", level: .debug)
             throw NetworkError.other(error)
         }
     }
@@ -163,25 +174,35 @@ public class NetworkManager {
         if let queryParams = params {
             request.url?.append(queryItems: queryParams)
         }
-
+        Logger.log(
+            """
+            Request:
+                URL: \(url)
+                method: \(method)
+                headers: \(headers ?? [:])
+                body: \(String(describing: body ?? nil))
+                params: \(params ?? [])
+            """,
+            level: .debug
+        )
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
+            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+            var requestResponse: String?
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
 
+            requestResponse = String(data: jsonData, encoding: .utf8)
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
-                var response: String?
-                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
-
-                response = String(data: jsonData, encoding: .utf8)
-
-                throw NetworkError.badStatusCode(statusCode, response)
+                throw NetworkError.badStatusCode(statusCode, requestResponse)
             }
-
+            Logger.log("Success! code: \(statusCode) response?: \(requestResponse ?? "")", level: .debug)
             return data
         } catch let networkError as NetworkError {
+            Logger.log("Network error: \(networkError)", level: .debug)
             throw networkError
         } catch {
+            Logger.log("Unkown network error: \(NetworkError.other(error))", level: .debug)
             throw NetworkError.other(error)
         }
     }
