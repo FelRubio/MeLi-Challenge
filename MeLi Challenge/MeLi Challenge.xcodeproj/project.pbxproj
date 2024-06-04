@@ -22,6 +22,7 @@
 		5504D2B52C04917B007225AB /* EncodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2B42C04917B007225AB /* EncodableError.swift */; };
 		5504D2BB2C049527007225AB /* ProductRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5504D2BA2C049527007225AB /* ProductRepositoryProtocol.swift */; };
 		5507A7CB2C0F1C960035D0AF /* ConfigReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5507A7CA2C0F1C960035D0AF /* ConfigReader.swift */; };
+		553614AC2C0F1F5D00664DE9 /* MeLi-Challenge-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */; };
 		554F6FFA2C046FFD005F4803 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F6FF92C046FFD005F4803 /* ProductDetailView.swift */; };
 		55CAD9092C0449520058E54A /* MeLi_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */; };
 		55CAD90B2C0449520058E54A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CAD90A2C0449520058E54A /* ContentView.swift */; };
@@ -80,6 +81,7 @@
 		5504D2B42C04917B007225AB /* EncodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableError.swift; sourceTree = "<group>"; };
 		5504D2BA2C049527007225AB /* ProductRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepositoryProtocol.swift; sourceTree = "<group>"; };
 		5507A7CA2C0F1C960035D0AF /* ConfigReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigReader.swift; sourceTree = "<group>"; };
+		553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MeLi-Challenge-Info.plist"; sourceTree = SOURCE_ROOT; };
 		554F6FF92C046FFD005F4803 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		55CAD9052C0449520058E54A /* MeLi Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeLi Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLi_ChallengeApp.swift; sourceTree = "<group>"; };
@@ -245,18 +247,19 @@
 		55CAD9072C0449520058E54A /* MeLi Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				55EEDCED2C05ED12000091A2 /* Translators */,
-				55CAD90C2C0449540058E54A /* Assets.xcassets */,
-				55CAD90A2C0449520058E54A /* ContentView.swift */,
+				553614AB2C0F1F5C00664DE9 /* MeLi-Challenge-Info.plist */,
 				55DAFBAD2C0CA9FC00D60797 /* Configurations */,
 				55CAD90E2C0449540058E54A /* MeLi_Challenge.entitlements */,
+				55CAD90A2C0449520058E54A /* ContentView.swift */,
 				55CAD9082C0449520058E54A /* MeLi_ChallengeApp.swift */,
+				55CAD90C2C0449540058E54A /* Assets.xcassets */,
 				5504D2472C0480F9007225AB /* Models */,
 				5504D2A92C048DF7007225AB /* Networking */,
 				55CAD90F2C0449540058E54A /* Preview Content */,
 				5504D2B92C04951D007225AB /* Repositories */,
 				55EFD99E2C046C060000F42E /* Resources */,
 				55EEDCDD2C05DB0D000091A2 /* Services */,
+				55EEDCED2C05ED12000091A2 /* Translators */,
 				5504D2B02C04913D007225AB /* Utilities */,
 				55F328972C04513F0037D987 /* Views */,
 			);
@@ -431,6 +434,7 @@
 				55CAD9112C0449540058E54A /* Preview Assets.xcassets in Resources */,
 				55CAD90D2C0449540058E54A /* Assets.xcassets in Resources */,
 				55EFD9A02C046C140000F42E /* Localizable.xcstrings in Resources */,
+				553614AC2C0F1F5D00664DE9 /* MeLi-Challenge-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,6 +1095,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1132,6 +1137,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1162,6 +1168,7 @@
 		};
 		55F3288F2C044FEA0037D987 /* Debug QA */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DAFBAE2C0CAA0A00D60797 /* Debug QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1237,6 +1244,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1342,6 +1350,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1440,6 +1449,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1539,6 +1549,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MeLi-Challenge-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
