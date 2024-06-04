@@ -25,11 +25,11 @@ class Logger {
         // A fail safe if the key or the .xconfig file is missing.
         #if DEBUG
         return .debug
-        #elseif RELEASE_DEV
+        #elseif DEV
         return .debug
-        #elseif RELEASE_QA
+        #elseif QA
         return .info
-        #elseif RELEASE_PROD
+        #elseif PROD
         return .error
         #else
         // Return the minimum log level by default.
