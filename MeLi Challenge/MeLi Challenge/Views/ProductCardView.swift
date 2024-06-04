@@ -8,43 +8,90 @@
 import SwiftUI
 
 struct ProductCardView: View {
-    private var productName: String
+    private let product: Product
+    @State private var thumbnailImage: UIImage?
     
-    init(productName: String = "") {
-        self.productName = productName
+    var installmentsInfoString: String {
+        "\(product.installmentsData.quantity)x \(product.installmentsData.amount.formatted(.currency(code: product.currencyId)))"
+    }
+    
+    init(product: Product) {
+        self.product = product
     }
     
     var body: some View {
         HStack(spacing: 0) {
-            Rectangle()
-                .fill(.gray)
-                .frame(width: 100, height: 100)
+            AsyncImage(
+                url: URL(string: product.thumbnailURL.convertToHTTPS())
+            ) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 120, height: 120)
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                        .frame(maxWidth: 120, maxHeight: 120, alignment: .center)
+                case .failure(let error):
+                    defaultThumbnail
+                        .task {
+                            print(error)
+                        }
+                @unknown default:
+                    defaultThumbnail
+                }
+            }
+            
             VStack {
-                Text(productName.isEmpty ? String(localized: "PRODUCT_NAME_PLACEHOLDER") : productName)
-                    .font(.footnote)
-                    .lineLimit(3)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Group {
+                    Text(product.title)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .font(.footnote)
+                        .lineLimit(3)
+                    
+                    Spacer()
 
-                Spacer()
-
-                Text("PRICE_PLACEHOLDER")
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(product.price.formatted(.currency(code: product.currencyId)))
+                        .bold()
+                        .fontDesign(.rounded)
+                    
+                    Text("IN \(installmentsInfoString)")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    
+                    if product.shippingData.freeShipping {
+                        Text("FREE_SHIPPING_LABEL")
+                            .font(.caption)
+                            .bold()
+                            .foregroundStyle(.green)
+                    }
+                }
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .padding(.horizontal)
-            .padding(.vertical, 6)
+            .padding()
         }
         .background(Color(.systemBackground))
         .cornerRadius(8)
         .shadow(radius: 4)
-        .frame(height: 100)
         .fixedSize(horizontal: false, vertical: true)
+    }
+    
+    var defaultThumbnail: some View {
+        Image(systemName: "photo.on.rectangle")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(maxWidth: 80, maxHeight: 80, alignment: .center)
+            .padding()
+            .foregroundStyle(.secondary)
+            .opacity(0.7)
     }
 }
 
 #Preview {
-    ProductCardView()
-        .padding()
+    ProductCardView(product: Product.randomSample())
+    .padding()
 }
